@@ -1,0 +1,38 @@
+<div class="container">
+  <form nz-form [formGroup]="formGroup">
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="name">Nome</nz-form-label>
+      <nz-form-control nzErrorTip="Preencha o Nome!">
+        <input nz-input formControlName="name" id="name" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="email">E-mail</nz-form-label>
+      <nz-form-control nzErrorTip="Preencha o E-mail!">
+        <input nz-input formControlName="email" id="email" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="password">Senha</nz-form-label>
+      <nz-form-control nzErrorTip="Preencha a Senha!">
+        <input
+          nz-input
+          type="password"
+          formControlName="password"
+          id="password"
+        />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="role">Cargo</nz-form-label>
+      <nz-form-control nzErrorTip="Selecione o Cargo!">
+        <nz-select formControlName="role">
+          <nz-option nzLabel="Admin" nzValue="admin"></nz-option>
+          <nz-option nzLabel="Padrao" nzValue="user"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary" (click)="submit()">Submit</button>
+  </form>
+</div>

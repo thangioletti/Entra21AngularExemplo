@@ -17,4 +17,24 @@ export class UserService {
       },
     });
   }
+
+  public getById(id: string):Observable<any> {
+    const route: string = `https://localhost:7275/user/${id}`;
+    return this.http.get(route, {
+      headers: {
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGlhZ28xMjMiLCJlbWFpbCI6InRpYWdvIiwicm9sZSI6InVzZXIiLCJuYmYiOjE3MDU3MTAwMDQsImV4cCI6MTcwNTcxMzYwNCwiaWF0IjoxNzA1NzEwMDA0fQ.9n2ZrYAha8An7Gzkp4sZhiuntyTYv0PKRUDhFMDZwZc',
+      },
+    });
+  }
+
+  public post(userData: any):Observable<any> {
+    const route: string = 'https://localhost:7275/user';
+    return this.http.post(route, userData, {
+      headers: {
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGlhZ28xMjMiLCJlbWFpbCI6InRpYWdvIiwicm9sZSI6InVzZXIiLCJuYmYiOjE3MDU3MTAwMDQsImV4cCI6MTcwNTcxMzYwNCwiaWF0IjoxNzA1NzEwMDA0fQ.9n2ZrYAha8An7Gzkp4sZhiuntyTYv0PKRUDhFMDZwZc',
+      },
+    });
+  }
 }
